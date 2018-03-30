@@ -67,21 +67,49 @@ var course = {
   instructor: "Frank Strocco",
   level: 1,
   published: true,
-  views: 0
+  views: 0,
+  updateViews: function() {
+    return ++course.views;
+  }
+
 }
 
 console.log(course);
+console.log(course.views);
+course.updateViews();
+
+console.log(course.views);
 
 
+// new instance of date object;
+
+// var currentDate = new Date();
+// console.log(currentDate);
+
+// OBJECT CONSTRUCTORS
+
+function Course(title, instructor, level, published, views) {
+  this.title = title;
+  this.instructor = instructor;
+  this.level = level;
+  this.published = published;
+  this.views = views;
+  this.updateViews = function(){
+    return ++this.views;
+  }
+}
+
+var courses = [new Course("javascript", "frank", 2, true, 10), new Course("flowers", "bob", 4, false, 0)]
+console.log(courses[0]);
 
 
+console.log(courses[1]);
 
-
-
-
-
-
-
+console.log(courses[0].views);
+courses[0].updateViews();
+console.log(courses[0].views);
+courses[0].updateViews();
+console.log(courses[0].views);
 
 
 
