@@ -57,59 +57,102 @@
 // objects
 
 
-var course = new Object();
+// var course = new Object();
 //
 // course.title = "JavaScript Essential Training";
 // cousr...
 
-var course = {
-  title: "JavaScript Essential Training",
-  instructor: "Frank Strocco",
-  level: 1,
-  published: true,
-  views: 0,
-  updateViews: function() {
-    return ++course.views;
+// var course = {
+//   title: "JavaScript Essential Training",
+//   instructor: "Frank Strocco",
+//   level: 1,
+//   published: true,
+//   views: 0,
+//   updateViews: function() {
+//     return ++course.views;
+//   }
+//
+// }
+//
+// console.log(course);
+// console.log(course.views);
+// course.updateViews();
+//
+// console.log(course.views);
+//
+//
+// // new instance of date object;
+//
+// // var currentDate = new Date();
+// // console.log(currentDate);
+//
+// // OBJECT CONSTRUCTORS
+//
+// function Course(title, instructor, level, published, views) {
+//   this.title = title;
+//   this.instructor = instructor;
+//   this.level = level;
+//   this.published = published;
+//   this.views = views;
+//   this.updateViews = function(){
+//     return ++this.views;
+//   }
+// }
+//
+// var courses = [new Course("javascript", "frank", 2, true, 10), new Course("flowers", "bob", 4, false, 0)]
+// console.log(courses[0]);
+//
+//
+// console.log(courses[1]);
+//
+// console.log(courses[0].views);
+// courses[0].updateViews();
+// console.log(courses[0].views);
+// courses[0].updateViews();
+// console.log(courses[0].views);
+
+// CLOSURES
+
+// function doSomeMath() {
+//   var a = 5;
+//   var b = 4;
+//   var sum = a + b;
+//
+//   function multiply(){
+//     var result = a * b;
+//     return result;
+//   }
+//
+//   return multiply;
+// }
+//
+// var theResult = doSomeMath();
+// console.log("The result: ", theResult());
+
+function giveMeEms(pixels) {
+  var baseValue = 16;
+
+  function doTheMath() {
+    return pixels/baseValue;
   }
+
+  return doTheMath;
 
 }
 
-console.log(course);
-console.log(course.views);
-course.updateViews();
-
-console.log(course.views);
-
-
-// new instance of date object;
-
-// var currentDate = new Date();
-// console.log(currentDate);
-
-// OBJECT CONSTRUCTORS
-
-function Course(title, instructor, level, published, views) {
-  this.title = title;
-  this.instructor = instructor;
-  this.level = level;
-  this.published = published;
-  this.views = views;
-  this.updateViews = function(){
-    return ++this.views;
-  }
-}
-
-var courses = [new Course("javascript", "frank", 2, true, 10), new Course("flowers", "bob", 4, false, 0)]
-console.log(courses[0]);
+var smallSize = giveMeEms(12);
+var mediumSize = giveMeEms(18);
+var largeSize = giveMeEms(24);
+var xlargeSize = giveMeEms(32);
 
 
-console.log(courses[1]);
+console.log("Small size: ", smallSize());
+console.log("Medium size: ", mediumSize());
+console.log("Large size: ", largeSize());
+console.log("Extra Large size: ", xlargeSize());
 
-console.log(courses[0].views);
-courses[0].updateViews();
-console.log(courses[0].views);
-courses[0].updateViews();
-console.log(courses[0].views);
+
+
 
 
 
